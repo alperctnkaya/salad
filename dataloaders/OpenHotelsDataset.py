@@ -19,7 +19,7 @@ class OpenHotelsDataset(Dataset):
     Loads images from disk using JSON metadata.
 
     Each metadata entry must have:
-        - ``new_path``:  relative path from *image_root*
+        - ``path``:  relative path from *image_root*
         - ``hotel_id``:  hotel identifier (str)
 
     Returns ``(image_tensor, hotel_id_str)`` per sample.
@@ -33,7 +33,7 @@ class OpenHotelsDataset(Dataset):
 
         # Pre-compute paths and IDs once for fast __getitem__
         self.paths = [
-            os.path.join(image_root, entry["new_path"])
+            os.path.join(image_root, entry["path"])
             for entry in self.metadata
         ]
         self.hotel_ids = [str(entry["hotel_id"]) for entry in self.metadata]
@@ -101,7 +101,7 @@ class OpenHotelsTrainDataset(Dataset):
         self.all_hotel_ids: list[str] = []
 
         for idx, entry in enumerate(metadata):
-            path = os.path.join(image_root, entry["new_path"])
+            path = os.path.join(image_root, entry["path"])
             hid = str(entry["hotel_id"])
             self.all_paths.append(path)
             self.all_hotel_ids.append(hid)
