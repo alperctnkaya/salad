@@ -11,7 +11,7 @@ _REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")
 
 # ── Dataset paths ────────────────────────────────────────────────────────────
 DATASET_ROOT = os.path.join(_REPO_ROOT, "data/full")
-IMAGE_ROOT = os.path.join(DATASET_ROOT, "images")
+IMAGE_ROOT = DATASET_ROOT 
 
 GALLERY_METADATA = os.path.join(DATASET_ROOT, "metadata_gallery.json")
 TEST_OBJECT_METADATA = os.path.join(DATASET_ROOT, "metadata_test_object.json")
