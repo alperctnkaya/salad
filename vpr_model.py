@@ -16,11 +16,11 @@ class VPRModel(pl.LightningModule):
 
     def __init__(self,
         #---- Backbone
-        backbone_arch='resnet50',
+        backbone_arch='dinov2_vitb14',
         backbone_config={},
         
         #---- Aggregator
-        agg_arch='ConvAP',
+        agg_arch='salad_multivector',
         agg_config={},
         
         #---- Train hyperparameters
@@ -83,6 +83,12 @@ class VPRModel(pl.LightningModule):
     # the forward pass of the lightning model
     def forward(self, x):
         x = self.backbone(x)
+        
+        # If backbone returns a tuple (e.g., DINOv2 with return_token=True),
+        # extract just the features if the aggregator does not use the token
+        if isinstance(x, tuple) and 'salad' not in self.agg_arch.lower():
+            x = x[0]
+            
         x = self.aggregator(x)
         return x
     
