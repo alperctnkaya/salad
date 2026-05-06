@@ -6,7 +6,7 @@ import json
 from tqdm import tqdm
 
 from vpr_model import VPRModel
-from dataloaders.OpenHotelsDatasetDataloader import OpenHotelsDataModule
+from dataloaders.OpenHotelsDataloader import OpenHotelsDataModule
 
 
 def get_optimizer_and_scheduler(model, config):
