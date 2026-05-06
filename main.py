@@ -96,30 +96,30 @@ if __name__ == "__main__":
         "backbone_arch": "dinov2_vitb14",
         "backbone_config": {
             "num_trainable_blocks": 4,
-            "return_token": False, 
-            "norm_layer": True,
+            "return_token": true,
+            "norm_layer": true
         },
-        "agg_arch": "salad_gem",
+        "agg_arch": "salad",
         "agg_config": {
             "num_channels": 768,
-            "num_clusters": 16,
-            "cluster_dim": 512,
-            "token_dim": 256,
+            "num_clusters": 64,
+            "cluster_dim": 128,
+            "token_dim": 256
         },
-        "lr": 6e-5,
+        "lr": 6e-05,
         "optimizer": "adamw",
-        "weight_decay": 9.5e-9,
+        "weight_decay": 9.5e-09,
         "momentum": 0.9,
         "lr_sched": "linear",
         "lr_sched_args": {
             "start_factor": 1,
             "end_factor": 0.2,
-            "total_iters": 4000,
+            "total_iters": 4000
         },
         "loss_name": "MultiSimilarityLoss",
-        "miner_name": None,
+        "miner_name": null,
         "miner_margin": 0.1,
-        "faiss_gpu": False,
+        "faiss_gpu": false
     }
 
     if args.model_config_path:
