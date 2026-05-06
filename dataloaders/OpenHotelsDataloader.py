@@ -95,7 +95,7 @@ class OpenHotelsDataModule:
 
     def setup(self):
         """Initialise the training dataset (gallery images grouped by hotel)."""
-        self.train_dataset = HotelTrainDataset(
+        self.train_dataset = OpenHotelsTrainDataset(
             metadata_path=self.gallery_metadata,
             image_root=self.image_root,
             transform=self.train_transform,
