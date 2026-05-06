@@ -137,7 +137,7 @@ if __name__ == "__main__":
     optimizer, scheduler = get_optimizer_and_scheduler(model, model_config)
 
     # Output directory
-    output_dir = "logs/openhotels/dinov2_vitb14_salad_gem"
+    output_dir = "logs/openhotels/dinov2_vitb14_salad"
     os.makedirs(output_dir, exist_ok=True)
 
     # Save model config
