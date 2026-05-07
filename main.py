@@ -117,7 +117,7 @@ if __name__ == "__main__":
             "total_iters": 4000
         },
         "loss_name": "MultiSimilarityLoss",
-        "miner_name": null,
+        "miner_name": None,
         "miner_margin": 0.1,
         "faiss_gpu": false
     }
