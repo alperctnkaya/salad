@@ -119,7 +119,7 @@ if __name__ == "__main__":
         "loss_name": "MultiSimilarityLoss",
         "miner_name": None,
         "miner_margin": 0.1,
-        "faiss_gpu": false
+        "faiss_gpu": False,
     }
 
     if args.model_config_path:
