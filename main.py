@@ -96,8 +96,8 @@ if __name__ == "__main__":
         "backbone_arch": "dinov2_vitb14",
         "backbone_config": {
             "num_trainable_blocks": 4,
-            "return_token": true,
-            "norm_layer": true
+            "return_token": True,
+            "norm_layer": True
         },
         "agg_arch": "salad",
         "agg_config": {
